@@ -34,7 +34,7 @@ class SVG extends Component {
             </g>
           </defs>
 
-          {Array.from(Array(3).keys()).map(i => <use href="#triangle" x={randLarge.next().value} y={randLarge.next().value} />)}
+          {Array.from(Array(3).keys()).map(i => <use xlinkHref="#triangle" x={randLarge.next().value} y={randLarge.next().value} />)}
 
           {/* <use href="#triangle" x="120" y="60" /> */}
           {/* <use href="#triangle" x="140" y="60" /> */}
