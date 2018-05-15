@@ -19,10 +19,18 @@ class SVG extends Component {
         <SVGComponent xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1296 102">
           <defs>
             <g>
-              <linearGradient id="gold" x1="0%" y1="0%" x2="0%" y2="100%">
-                <stop offset="5%" stopColor="#F7D696" />
-                <stop offset="50%" stopColor="#EEBE7B" />
-                <stop offset="95%" stopColor="#CEA058" />
+              <linearGradient id="goldAnimated" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stopColor="#F7D696">
+                  <animate attributeName="stop-color" values="#F7D696; #EEBE7B; #F7D696" dur="2s" repeatCount="indefinite" />
+                </stop>
+                <stop offset="50%" stopColor="#EEBE7B">
+                  <animate attributeName="stop-color" values="#EEBE7B; #F7D696; #EEBE7B" dur="2s" repeatCount="indefinite" />
+                </stop>
+                <stop offset="100%" stopColor="#CEA058">
+                  <animate attributeName="stop-color" values="#CEA058; #EEBE7B; #CEA058" dur="2s" repeatCount="indefinite" />
+                </stop>
+                {/* <stop offset="50%" stopColor="#EEBE7B" />
+                <stop offset="100%" stopColor="#CEA058" /> */}
               </linearGradient>
             </g>
             <g>
@@ -57,12 +65,12 @@ const SVGComponent = styled.svg`
   margin: 0 2rem;
   path {
     fill: transparent;
-    stroke: url(#gold);
+    stroke: url(#goldAnimated);
     stroke-width: 2;
     transition: all 0.8s ease-in-out;
-    @media (max-width: 600px) {
+    @media (max-width: 2000px) {
       stroke: none;
-      fill: url(#gold);
+      fill: url(#goldAnimated);
     }
   }
 `;
